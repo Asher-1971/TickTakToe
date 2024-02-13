@@ -21,6 +21,7 @@ Module Program
         Dim choice As Integer = Console.ReadLine()
 
         While choice > 2 Or choice < 1
+            Console.WriteLine()
             Console.WriteLine("Invalid choice, please try again".ToUpper)
             Call Choices()
             choice = Console.ReadLine()
@@ -48,6 +49,13 @@ Module Program
         ElseIf choice = 2 Then
             Console.WriteLine("[COMPUTER] is given Symbol '{0}' ", OppSymbol)
         End If
+
+
+
+
+
+        Dim GameData(2, 2) As String
+        Dim row, column As Integer
 
 
 
