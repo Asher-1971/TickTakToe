@@ -1,19 +1,19 @@
 Imports System
 
 Module Program
-    sub Choices()
-    end sub
-    
-    
-    
-    
-    
+    Sub Choices()
+    End Sub
+
+
+
+
+
     Sub Main(args As String())
 
-        console.writeline("WELCOME TO THE TICK-TAC-TOE GAME ")
-        console.writeline(" ")
+        Console.WriteLine("WELCOME TO THE TICK-TAC-TOE GAME ")
+        Console.WriteLine(" ")
 
-        
+
 
 
     End Sub
