@@ -28,7 +28,7 @@ Module Program
 
         Dim Symbol As String
         Console.WriteLine()
-        Console.WriteLine("Enter your symbol (X or O): ")
+        Console.WriteLine("Choose your symbol [PLAYER 1] (X or O): ")
         Symbol = Console.ReadLine().ToUpper
         While Symbol <> "X" And Symbol <> "O"
             Console.WriteLine("Invalid symbol, please try again".ToUpper)
@@ -36,8 +36,20 @@ Module Program
             Symbol = Console.ReadLine().ToUpper
         End While
 
+        Dim OppSymbol As String
+        If Symbol = "X" Then
+            OppSymbol = "O"
+        Else
+            OppSymbol = "X"
+        End If
 
-        s
+        If choice = 1 Then
+            Console.WriteLine("[PLAYER 2] is given Symbol '{0}' ", OppSymbol)
+        ElseIf choice = 2 Then
+            Console.WriteLine("[COMPUTER] is given Symbol '{0}' ", OppSymbol)
+        End If
+
+
 
 
     End Sub
