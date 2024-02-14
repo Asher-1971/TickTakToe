@@ -90,8 +90,7 @@ Module Program
                 Dim playerturn() As Integer = {2, 1, 2, 1, 2, 1, 2, 1, 2}
                 Console.WriteLine("its [PLAYER 2]s turn 1st")
             End If
-
-
+            bbb
 
             Console.WriteLine("Enter the position you want to enter your symbol [{0}] :", symbol)
             Console.Write("Enter the row (1-3): ")
