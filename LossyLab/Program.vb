@@ -83,13 +83,14 @@ Module Program
             If number = 1 Then
                 Dim playerturn() As Integer = {1, 2, 1, 2, 1, 2, 1, 2, 1}
                 Console.WriteLine("its [PLAYER 1]s turn 1st")
+                End
             End If
-
 
             If number = 2 Then
                 Dim playerturn() As Integer = {2, 1, 2, 1, 2, 1, 2, 1, 2}
                 Console.WriteLine("its [PLAYER 2]s turn 1st")
             End If
+
 
 
             Console.WriteLine("Enter the position you want to enter your symbol [{0}] :", symbol)
