@@ -50,14 +50,30 @@ Module Program
             Console.WriteLine("[COMPUTER] is given Symbol '{0}' ", OppSymbol)
         End If
 
-
-
-
-
         Dim GameData(2, 2) As String
         Dim row, column As Integer
 
+        Console.WriteLine("THE GAME STARTS NOW")
+        Console.WriteLine(" ")
+        Console.WriteLine("Enter the position you want to enter your symbol [{0}] :", Symbol)
+        Console.Write("Enter the row (1-3): ")
+        row = Console.ReadLine()
+        While row > 3 Or row < 1
+            Console.WriteLine("Invalid row, please try again".ToUpper)
+            Console.Write("Enter the row (1-3): ")
+            row = Console.ReadLine()
+        End While
 
+        Console.Write("Enter the column (1-3): ")
+        column = Console.ReadLine()
+        While column > 3 Or column < 1
+            Console.WriteLine("Invalid row, please try again".ToUpper)
+            Console.Write("Enter the column (1-3): ")
+            column = Console.ReadLine()
+        End While
+
+
+        GameData(row - 1, column - 1) = Symbol
 
 
     End Sub
