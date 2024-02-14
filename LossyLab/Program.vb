@@ -19,6 +19,7 @@ Module Program
     Dim row, column As Integer
     Dim GameData(,) As String = New String(2, 2) {{"-", "-", "-"}, {"-", "-", "-"}, {"-", "-", "-"}}
 
+
     Sub Main(args As String())
 
         Console.WriteLine("WELCOME TO THE TICK-TAC-TOE GAME ")
@@ -62,8 +63,7 @@ Module Program
 
         Select Case choice
             Case 1
-
-
+                Call UserInput()
 
 
             Case 2
@@ -76,6 +76,22 @@ Module Program
     Sub UserInput()
         For gamecount = 1 To 9
             Console.WriteLine(" ")
+            Console.WriteLine("TOSSING A COIN FOR 1ST TURN")
+            Dim rand As New Random()
+            Dim number As Integer = rand.Next(1, 3)
+
+            If number = 1 Then
+                Dim playerturn() As Integer = {1, 2, 1, 2, 1, 2, 1, 2, 1}
+                Console.WriteLine("its [PLAYER 1]s turn 1st")
+            End If
+
+
+            If number = 2 Then
+                Dim playerturn() As Integer = {2, 1, 2, 1, 2, 1, 2, 1, 2}
+                Console.WriteLine("its [PLAYER 2]s turn 1st")
+            End If
+
+
             Console.WriteLine("Enter the position you want to enter your symbol [{0}] :", symbol)
             Console.Write("Enter the row (1-3): ")
             row = Console.ReadLine()
