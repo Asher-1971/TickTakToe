@@ -1,4 +1,5 @@
 Imports System
+Imports System.Data.Common
 
 Module Program
     Sub Choices()
@@ -12,13 +13,19 @@ Module Program
 
     End Sub
 
+    Dim Symbol As String
+    Dim OppSymbol As String
+    Dim choice As Integer
+    Dim row, column As Integer
+    Dim GameData(,) As String = New String(2, 2) {{"-", "-", "-"}, {"-", "-", "-"}, {"-", "-", "-"}}
+
     Sub Main(args As String())
 
         Console.WriteLine("WELCOME TO THE TICK-TAC-TOE GAME ")
         Console.WriteLine(" ")
 
         Call Choices()
-        Dim choice As Integer = Console.ReadLine()
+        choice = Console.ReadLine()
 
         While choice > 2 Or choice < 1
             Console.WriteLine()
@@ -27,7 +34,7 @@ Module Program
             choice = Console.ReadLine()
         End While
 
-        Dim Symbol As String
+
         Console.WriteLine()
         Console.WriteLine("Choose your symbol [PLAYER 1] (X or O): ")
         Symbol = Console.ReadLine().ToUpper
@@ -37,7 +44,7 @@ Module Program
             Symbol = Console.ReadLine().ToUpper
         End While
 
-        Dim OppSymbol As String
+
         If Symbol = "X" Then
             OppSymbol = "O"
         Else
@@ -50,31 +57,51 @@ Module Program
             Console.WriteLine("[COMPUTER] is given Symbol '{0}' ", OppSymbol)
         End If
 
-        Dim GameData(2, 2) As String
-        Dim row, column As Integer
-
         Console.WriteLine("THE GAME STARTS NOW")
-        Console.WriteLine(" ")
-        Console.WriteLine("Enter the position you want to enter your symbol [{0}] :", Symbol)
-        Console.Write("Enter the row (1-3): ")
-        row = Console.ReadLine()
-        While row > 3 Or row < 1
-            Console.WriteLine("Invalid row, please try again".ToUpper)
+
+
+        Select Case choice
+            Case 1
+
+
+
+
+            Case 2
+                    Console.WriteLine("FEATURE COMING SOON")
+
+        End Select
+    End Sub
+
+
+    Sub UserInput()
+        For gamecount = 1 To 9
+            Console.WriteLine(" ")
+            Console.WriteLine("Enter the position you want to enter your symbol [{0}] :", symbol)
             Console.Write("Enter the row (1-3): ")
             row = Console.ReadLine()
-        End While
+            While row > 3 Or row < 1
+                Console.WriteLine("Invalid row, please try again".ToUpper)
+                Console.Write("Enter the row (1-3): ")
+                row = Console.ReadLine()
+            End While
 
-        Console.Write("Enter the column (1-3): ")
-        column = Console.ReadLine()
-        While column > 3 Or column < 1
-            Console.WriteLine("Invalid row, please try again".ToUpper)
             Console.Write("Enter the column (1-3): ")
             column = Console.ReadLine()
-        End While
+            While column > 3 Or column < 1
+                Console.WriteLine("Invalid row, please try again".ToUpper)
+                Console.Write("Enter the column (1-3): ")
+                column = Console.ReadLine()
+            End While
 
+            GameData(row - 1, column - 1) = symbol
 
-        GameData(row - 1, column - 1) = Symbol
+            For count = 0 To 2
+                For count2 = 0 To 2
+                    Console.Write(GameData(count, count2) & vbTab)
+                Next
+                Console.WriteLine()
+            Next
 
-
+        Next
     End Sub
 End Module
